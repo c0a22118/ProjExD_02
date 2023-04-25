@@ -13,6 +13,8 @@ def main():
     bb_img.set_colorkey((0, 0, 0))
 
     tmr = 0
+    vx=0
+    vy=0
 
     while True:
         for event in pg.event.get():
@@ -20,9 +22,11 @@ def main():
                 return 0
 
         tmr += 1
+        vx +=1
+        vy +=1
         screen.blit(bg_img, [0, 0])
         screen.blit(kk_img, [900, 400])
-        screen.blit(bb_img, [500, 400])
+        screen.blit(bb_img,[vx,vy])
 
         pg.display.update()
         clock.tick(1000)
